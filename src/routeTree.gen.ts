@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ReservationRouteImport } from './routes/reservation'
 import { Route as MenuRouteImport } from './routes/menu'
 import { Route as HeritageRouteImport } from './routes/heritage'
 import { Route as GalleryRouteImport } from './routes/gallery'
@@ -18,6 +19,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReservationRoute = ReservationRouteImport.update({
+  id: '/reservation',
+  path: '/reservation',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MenuRoute = MenuRouteImport.update({
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/gallery': typeof GalleryRoute
   '/heritage': typeof HeritageRoute
   '/menu': typeof MenuRoute
+  '/reservation': typeof ReservationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/gallery': typeof GalleryRoute
   '/heritage': typeof HeritageRoute
   '/menu': typeof MenuRoute
+  '/reservation': typeof ReservationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
@@ -61,14 +69,28 @@ export interface FileRoutesById {
   '/gallery': typeof GalleryRoute
   '/heritage': typeof HeritageRoute
   '/menu': typeof MenuRoute
+  '/reservation': typeof ReservationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/gallery' | '/heritage' | '/menu' | '/sitemap.xml'
+  fullPaths:
+    | '/'
+    | '/gallery'
+    | '/heritage'
+    | '/menu'
+    | '/reservation'
+    | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/gallery' | '/heritage' | '/menu' | '/sitemap.xml'
-  id: '__root__' | '/' | '/gallery' | '/heritage' | '/menu' | '/sitemap.xml'
+  to: '/' | '/gallery' | '/heritage' | '/menu' | '/reservation' | '/sitemap.xml'
+  id:
+    | '__root__'
+    | '/'
+    | '/gallery'
+    | '/heritage'
+    | '/menu'
+    | '/reservation'
+    | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -76,6 +98,7 @@ export interface RootRouteChildren {
   GalleryRoute: typeof GalleryRoute
   HeritageRoute: typeof HeritageRoute
   MenuRoute: typeof MenuRoute
+  ReservationRoute: typeof ReservationRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
@@ -86,6 +109,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reservation': {
+      id: '/reservation'
+      path: '/reservation'
+      fullPath: '/reservation'
+      preLoaderRoute: typeof ReservationRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/menu': {
@@ -124,6 +154,7 @@ const rootRouteChildren: RootRouteChildren = {
   GalleryRoute: GalleryRoute,
   HeritageRoute: HeritageRoute,
   MenuRoute: MenuRoute,
+  ReservationRoute: ReservationRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
