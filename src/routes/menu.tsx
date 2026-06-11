@@ -140,8 +140,8 @@ function MenuPage() {
           </div>
           <ul className="divide-y divide-border/60">
             {items.map((item, idx) => (
-              <li key={`${item.name}-${idx}`} className="grid grid-cols-12 gap-4 py-6">
-                <div className="col-span-9">
+              <li key={`${item.name}-${idx}`} className="py-6">
+                <div>
                   <div className="flex items-center gap-3">
                     <h3 className="font-display text-base uppercase tracking-wide text-cream md:text-lg">
                       {item.name}
@@ -176,9 +176,6 @@ function MenuPage() {
                       ))}
                     </div>
                   )}
-                </div>
-                <div className="col-span-3 text-right font-display text-base text-cream md:text-lg">
-                  {formatPrice(item.price)}
                 </div>
               </li>
             ))}
