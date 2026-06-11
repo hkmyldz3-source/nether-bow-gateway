@@ -1,0 +1,716 @@
+{
+  "menu": [
+    {
+      "manuName": "Lunch",
+      "content": {
+        "BREAKFAST": [
+          {
+            "name": "TRADITIONAL BREAKFAST",
+            "price": 13.95,
+            "description": "Bacon, Sausage, Haggis, Fried Egg, Mushroom, Tomato, Hash Brown, Potato Scone, Beans & Toasted Bread (Served with butter)"
+          },
+          {
+            "name": "VEGETARIAN BREAKFAST",
+            "price": 12.95,
+            "tags": [
+              "v"
+            ],
+            "description": "Veggie Sausage, Fried Egg, Potato Scone, Hash Brown, Tomato, Mushroom, Beans & Toasted Bread (Served with butter)"
+          },
+          {
+            "name": "MENEMEN",
+            "price": 12.95,
+            "tags": [
+              "v"
+            ],
+            "description": "Eggs, Tomato, Peppers, Onion, Sweet Pepper Paste & Parsley (Served with butter)"
+          },
+          {
+            "name": "FRENCH TOAST",
+            "price": 12.95,
+            "options": [
+              "Bacon, Honey & Fried Egg",
+              "Fresh Fruits, Honey & Fried Egg (v)"
+            ]
+          },
+          {
+            "name": "PANCAKE PARADISE",
+            "price": 11.95,
+            "description": "Bacon, Fresh Fruits, Honey & Walnuts (Gluten Free Option Available)"
+          },
+          {
+            "name": "PANCAKE NUTELLA",
+            "price": 12.95,
+            "tags": [
+              "v"
+            ],
+            "description": "Nutella & Fresh Fruits (Gluten Free Option Available)"
+          },
+          {
+            "name": "MUESLI",
+            "price": 9.45,
+            "tags": [
+              "v"
+            ],
+            "description": "Served with Yoghurt, Fresh Fruits, Walnut & Honey"
+          },
+          {
+            "name": "ON TOAST",
+            "price": 13.45,
+            "options": [
+              "Bacon (Poached Eggs, Chopped Tomato, Smashed Avocado)",
+              "Salmon (Poached Eggs, Chopped Tomato, Smashed Avocado)"
+            ]
+          },
+          {
+            "name": "DOUBLE BREAKFAST ROLL",
+            "price": 5.5,
+            "description": "Two Fillings Of Either Bacon, Sausage, Fried Egg or Haggis",
+            "extras": "+£2 Each"
+          },
+          {
+            "name": "ÇILBIR (TURKISH POACHED EGGS)",
+            "price": 13.45,
+            "tags": [
+              "v"
+            ],
+            "description": "Poached Eggs Over Creamy Garlic Yoghurt Sauce, Finished With Chilli Butter And Herbs, Served With Toasted Bread"
+          }
+        ],
+        "EGGS_BENNY": [
+          {
+            "name": "FLORENTINE",
+            "price": 13.45,
+            "tags": [
+              "v"
+            ],
+            "description": "Wilted Spinach (Toasted English Muffin & Hollandaise Sauce)"
+          },
+          {
+            "name": "CROWN",
+            "price": 13.95,
+            "description": "Bacon (Toasted English Muffin & Hollandaise Sauce)"
+          },
+          {
+            "name": "ROYALE",
+            "price": 14.95,
+            "description": "Hot Smoked Salmon (Toasted English Muffin & Hollandaise Sauce)"
+          }
+        ],
+        "OMELETTES": [
+          {
+            "name": "HOT SMOKED SALMON & DILL",
+            "price": 12.95
+          },
+          {
+            "name": "HAM & CHEESE",
+            "price": 12.45
+          },
+          {
+            "name": "CHEESE & ONION",
+            "price": 11.95,
+            "tags": [
+              "v"
+            ]
+          }
+        ],
+        "BAGELS": [
+          {
+            "name": "HOT SMOKED SALMON",
+            "price": 11.95,
+            "description": "Smoked Salmon & Cream Cheese"
+          },
+          {
+            "name": "TUNA TORNADO",
+            "price": 9.95,
+            "description": "Tuna, Mayo & Red Onion"
+          },
+          {
+            "name": "AVOCADO",
+            "price": 11.95,
+            "tags": [
+              "v"
+            ],
+            "description": "Smashed Avocado, Chopped Tomato & Feta Cheese"
+          }
+        ],
+        "PANINI": [
+          {
+            "name": "CRANBERRY CONSPIRACY",
+            "price": 11.95,
+            "description": "Bacon, Brie & Cranberry (Served with Fries & Salad)"
+          },
+          {
+            "name": "TUNA MELT",
+            "price": 11.95,
+            "description": "Tuna with Mayo & Cheddar Cheese (Served with Fries & Salad)"
+          },
+          {
+            "name": "HAM",
+            "price": 11.95,
+            "description": "Ham, Cheese & Basil Pesto (Served with Fries & Salad)"
+          },
+          {
+            "name": "CHICKEN",
+            "price": 11.95,
+            "description": "Spicy Chicken & Special Salsa Sauce (Served with Fries & Salad)"
+          },
+          {
+            "name": "HUMMUS",
+            "price": 11.95,
+            "tags": [
+              "v"
+            ],
+            "description": "Hummus, Roast Pepper, Feta Cheese & Tomato (Served with Fries & Salad)"
+          }
+        ],
+        "LUNCH": [
+          {
+            "name": "HOMEMADE SOUP OF THE DAY",
+            "price": 6.95,
+            "tags": [
+              "ve"
+            ],
+            "description": "Served with Bread & Butter"
+          },
+          {
+            "name": "ZESTY LEMON CHICKEN",
+            "price": 17.95,
+            "tags": [
+              "gf"
+            ],
+            "description": "Marinated Grilled Lemon Chicken, Served with Cacik, Mix Garden Salad & Rice"
+          },
+          {
+            "name": "GRILLED SEABASS",
+            "price": 18.95,
+            "tags": [
+              "gf"
+            ],
+            "description": "Served with Roasted Mix Vegetables & Fries"
+          },
+          {
+            "name": "STUFFED AUBERGINE",
+            "price": 17.95,
+            "tags": [
+              "ve",
+              "gf"
+            ],
+            "description": "Roasted Aubergine, Stuffed with Roast Pepper, Tomato, Onion & Garlic Served with Rice"
+          },
+          {
+            "name": "MINCED STUFFED AUBERGINE",
+            "price": 18.95,
+            "tags": [
+              "gf"
+            ],
+            "description": "Roasted Aubergine, Stuffed with Roast Pepper, Tomato, Onion, Slow-Cooked Steak Mince & Garlic, Served with Rice"
+          },
+          {
+            "name": "MIX MEZZE PLATTER",
+            "price": 17.95,
+            "tags": [
+              "v"
+            ],
+            "description": "Vine Leaves, Marinated Artichoke Hearts, Hummus, Halloumi, Cacik, Salad & Pita Bread"
+          },
+          {
+            "name": "CHICKPEA CURRY",
+            "price": 17.95,
+            "tags": [
+              "ve"
+            ],
+            "description": "Wholesome Dish with a Smooth & Uplifting Curry Sauce, Served on a Bed of Rice & Mix Garden Salad"
+          },
+          {
+            "name": "KIDS MENU",
+            "price": 9.95,
+            "description": "Served with a Glass of Juice - up to 12 Years Old",
+            "options": [
+              "Chicken Nuggets With Chips",
+              "Mini Pasta (Choice of any Pasta)"
+            ]
+          },
+          {
+            "name": "FISH & CHIPS",
+            "price": 15.95,
+            "description": "Breaded Haddock Fish & Chips, Served with Peas, Lemon & Tartar Sauce"
+          },
+          {
+            "name": "HAGGIS, NEEPS & TATTIES",
+            "price": 14.5,
+            "description": "Traditional Scottish Haggis Served With Mashed Turnips And Potatoes, Finished With Rich Gravy"
+          }
+        ],
+        "PASTA": [
+          {
+            "name": "BOLOGNESE",
+            "price": 13.95,
+            "description": "Served with Our Own House Sauce, Slowly Cooked Steak Mince & Parmesan Cheese"
+          },
+          {
+            "name": "CARBONARA",
+            "price": 13.95,
+            "description": "Fresh Egg in Tasty Carbonara Sauce with Ham & Parmesan Cheese"
+          },
+          {
+            "name": "PRIMAVERA",
+            "price": 13.45,
+            "tags": [
+              "ve"
+            ],
+            "description": "Grilled Mix Peppers, Tomato, Red Onion & Asparagus (Parmesan Cheese Optional)"
+          }
+        ],
+        "BURGERS": [
+          {
+            "name": "NETHER BOW BURGER",
+            "price": 14.95,
+            "description": "Angus Beef, Lettuce, Tomato, Red Onion, Sliced Cheese, Served With Fries",
+            "extras": [
+              "Bacon +£2",
+              "Egg +£2",
+              "Haggis +£2",
+              "Extra Cheese +£2"
+            ]
+          },
+          {
+            "name": "CHICKEN BURGER",
+            "price": 14.45,
+            "description": "Tomato, Red Onion, Lettuce & Chips"
+          },
+          {
+            "name": "ROBBIE BURNS HAGGIS BURGER",
+            "price": 14.45,
+            "description": "Tomato, Red Onion, Lettuce & Chips"
+          },
+          {
+            "name": "VEGGIE BURGER",
+            "price": 13.45,
+            "tags": [
+              "v"
+            ],
+            "description": "Tomato, Red Onion, Lettuce & Chips"
+          }
+        ],
+        "SALADS": [
+          {
+            "name": "SMOKED SALMON SALAD",
+            "price": 13.95,
+            "description": "Hot Smoked Salmon, Avocado, Walnuts, Vine Tomato, Cucumber, Mix Garden Salad & House Dressing"
+          },
+          {
+            "name": "CHICKEN SALAD",
+            "price": 12.95,
+            "description": "Marinated Grill Chicken, Vine Tomato, Cucumber, Mix Garden Salad & House Dressing"
+          },
+          {
+            "name": "HALLOUMI SALAD",
+            "price": 12.45,
+            "tags": [
+              "v"
+            ],
+            "description": "Halloumi, Vine Tomato, Cucumber, Mix Garden Salad & House Dressing"
+          }
+        ],
+        "SHARING": [
+          {
+            "name": "BREAD & BUTTER",
+            "price": 3.95,
+            "tags": [
+              "v"
+            ]
+          },
+          {
+            "name": "FRIES",
+            "price": 4.95,
+            "extras": [
+              "Parmesan & Truffle +£2",
+              "Cajun +£2"
+            ]
+          },
+          {
+            "name": "HUMMUS",
+            "price": 5.95,
+            "tags": [
+              "ve"
+            ],
+            "description": "Served with Naan Bread"
+          }
+        ],
+        "DESSERTS": [
+          {
+            "name": "CHOCOLATE CAKE",
+            "price": 5.95,
+            "description": "Served with Whipped Cream & Chocolate Sauce"
+          },
+          {
+            "name": "CARROT CAKE",
+            "price": 5.95,
+            "description": "Served with Whipped Cream & Toffee Sauce"
+          },
+          {
+            "name": "CARAMEL SHORT CAKE",
+            "price": 4.55
+          },
+          {
+            "name": "SCONES",
+            "price": 4.55,
+            "description": "Fruit Scones Served with Butter & Jam"
+          }
+        ]
+      }
+    },
+    {
+      "manuName": "Dinner",
+      "content": {}
+    },
+    {
+      "manuName": "Drink",
+      "content": {
+        "TEAS": [
+          {
+            "name": "BREAKFAST",
+            "price": 3.95
+          },
+          {
+            "name": "DECAF",
+            "price": 3.95
+          },
+          {
+            "name": "EARL GREY",
+            "price": 3.95
+          },
+          {
+            "name": "LEMON & GINGER",
+            "price": 3.95
+          },
+          {
+            "name": "PEPERMINT",
+            "price": 3.95
+          },
+          {
+            "name": "CHAMOMILE",
+            "price": 3.95
+          },
+          {
+            "name": "GREEN",
+            "price": 3.95
+          }
+        ],
+        "SMOOTHIES": [
+          {
+            "name": "STRAWBERRY SPLIT",
+            "price": 6.95,
+            "description": "Strawberry & Banana"
+          },
+          {
+            "name": "TROPICAL DELIGHT",
+            "price": 6.95,
+            "description": "Peach, Passion Fruit & Mango"
+          },
+          {
+            "name": "MANGO TWISTER",
+            "price": 6.95,
+            "description": "Mango & Raspberry"
+          },
+          {
+            "name": "BERRY BURST",
+            "price": 6.95,
+            "description": "Strawberry & Blueberry"
+          },
+          {
+            "name": "SWEET MELODY",
+            "price": 6.95,
+            "description": "Mango, Strawberry & Melon"
+          }
+        ],
+        "MILKSHAKES": [
+          {
+            "name": "BANANA",
+            "price": 6.95
+          },
+          {
+            "name": "VANILLA",
+            "price": 6.95
+          },
+          {
+            "name": "MINT CHOCOLATE",
+            "price": 6.95
+          },
+          {
+            "name": "CHOCOLATE",
+            "price": 6.95
+          },
+          {
+            "name": "STRAWBERRY",
+            "price": 6.95
+          },
+          {
+            "name": "CAPPUCCINO",
+            "price": 6.95
+          }
+        ],
+        "COLD_DRINKS": [
+          {
+            "name": "FIZZY DRINKS",
+            "price": 3,
+            "options": [
+              "Coke",
+              "Diet Coke",
+              "Coke Zero",
+              "Fanta",
+              "Sprite",
+              "Irn-Bru"
+            ]
+          },
+          {
+            "name": "GINGER BEER",
+            "price": 3.25
+          },
+          {
+            "name": "STILL WATER",
+            "price": 2.8
+          },
+          {
+            "name": "SPARKLING WATER",
+            "price": 3
+          },
+          {
+            "name": "APPLE, ORANGE, CRANBERRY JUICE",
+            "price": 3
+          },
+          {
+            "name": "FRESHLY SQUEEZED ORANGE JUICE",
+            "price": 6.5
+          }
+        ],
+        "LIQUEUR_COFFEES": [
+          {
+            "name": "ITALIAN CLASSICO COFFEE",
+            "price": 9.5,
+            "description": "Amaretto, Coffee & Cream"
+          },
+          {
+            "name": "IRISH COFFEE",
+            "price": 9.5,
+            "description": "Whisky, Sugar, Coffee & Cream"
+          },
+          {
+            "name": "BAILEY'S COFFEE",
+            "price": 9.5,
+            "description": "Bailey's, Coffee & Cream"
+          },
+          {
+            "name": "CALYPSO COFFEE",
+            "price": 9.5,
+            "description": "Tia Maria, Coffee & Cream"
+          },
+          {
+            "name": "BAILEY'S HOT CHOCOLATE",
+            "price": 9.5,
+            "description": "Bailey's, Hot Chocolate & Cream"
+          }
+        ],
+        "COFFEES": [
+          {
+            "name": "ESPRESSO",
+            "price": 3.25
+          },
+          {
+            "name": "DOUBLE ESPRESSO",
+            "price": 3.45
+          },
+          {
+            "name": "ESPRESSO MACCHIATO",
+            "price": 3.45
+          },
+          {
+            "name": "DOUBLE ESPRESSO MACHIATO",
+            "price": 3.95
+          },
+          {
+            "name": "AMERICANO",
+            "price": 3.85
+          },
+          {
+            "name": "CAPPUCCINO",
+            "price": 3.95
+          },
+          {
+            "name": "LATTE",
+            "price": 3.95
+          },
+          {
+            "name": "FLAT WHITE",
+            "price": 3.95
+          },
+          {
+            "name": "MOCHA",
+            "price": 4.65
+          },
+          {
+            "name": "HOT CHOCOLATE",
+            "price": 4.45
+          },
+          {
+            "name": "CHAI TEA LATTE",
+            "price": 4.45
+          },
+          {
+            "name": "MATCHA LATTE",
+            "price": 4.6
+          },
+          {
+            "name": "DIRTY MATCHA",
+            "price": 5.2,
+            "description": "Matcha + Espresso"
+          },
+          {
+            "name": "DIRTY CHAI TEA LATTE",
+            "price": 4.65,
+            "description": "With Single Shot of Espresso"
+          },
+          {
+            "name": "ICED COFFEE",
+            "price": 4.95,
+            "description": "Espresso, Milk & Whipped Cream"
+          },
+          {
+            "name": "ICED MATCHA LATTE",
+            "price": 4.8
+          },
+          {
+            "name": "EXTRA SYRUP",
+            "price": 0.5,
+            "options": [
+              "Hazelnut",
+              "Vanilla",
+              "Cinnamon",
+              "Caramel"
+            ]
+          },
+          {
+            "name": "EACH EXTRA",
+            "price": 0.5,
+            "options": [
+              "Whipped Cream",
+              "Shot",
+              "Plant Based Milk"
+            ]
+          }
+        ],
+        "BEERS": [
+          {
+            "name": "DRAFT BEER",
+            "price": {
+              "pint": 6.15,
+              "half": 3.3
+            }
+          },
+          {
+            "name": "SCOTTISH DARK",
+            "price": 6.5
+          },
+          {
+            "name": "EFES LAGER",
+            "price": 6
+          },
+          {
+            "name": "CORONA LAGER",
+            "price": 6
+          },
+          {
+            "name": "SAN MIGUEL LAGER",
+            "price": 6
+          },
+          {
+            "name": "SCOTTISH ALE",
+            "price": 6.5
+          },
+          {
+            "name": "SCOTTISH IPA",
+            "price": 6.5
+          },
+          {
+            "name": "MAGNER'S APPLE CIDER",
+            "price": 6.95
+          },
+          {
+            "name": "KOPPARBERG PEAR CIDER",
+            "price": 6.95
+          }
+        ],
+        "WHITE_WINES": [
+          {
+            "name": "PINOT GRIGIO",
+            "abv": "12%",
+            "price": {
+              "glass": 7.95,
+              "bottle": 29.5
+            }
+          },
+          {
+            "name": "SAUVIGNON BLANC",
+            "abv": "12%",
+            "price": {
+              "glass": 7.95,
+              "bottle": 29.5
+            }
+          },
+          {
+            "name": "CHARDONNAY",
+            "abv": "12%",
+            "price": {
+              "glass": 7.95,
+              "bottle": 29.5
+            }
+          }
+        ],
+        "ROSE_WINES": [
+          {
+            "name": "ROSE",
+            "abv": "12%",
+            "price": {
+              "glass": 7.95,
+              "bottle": 29.5
+            }
+          }
+        ],
+        "RED_WINES": [
+          {
+            "name": "MALBEC",
+            "abv": "13.5%",
+            "price": {
+              "glass": 7.95,
+              "bottle": 29.5
+            }
+          },
+          {
+            "name": "SHIRAZ",
+            "abv": "11.5%",
+            "price": {
+              "glass": 7.95,
+              "bottle": 29.5
+            }
+          },
+          {
+            "name": "MERLOT",
+            "abv": "12.5%",
+            "price": {
+              "glass": 7.95,
+              "bottle": 29.5
+            }
+          }
+        ],
+        "PROSECCO": [
+          {
+            "name": "PROSECCO BEL CANTO",
+            "abv": "10.5%",
+            "price": 7.95
+          }
+        ]
+      }
+    }
+  ]
+}
