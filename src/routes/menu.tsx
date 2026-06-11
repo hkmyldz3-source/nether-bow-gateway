@@ -28,7 +28,7 @@ type Item = {
   description?: string;
   options?: string[];
   tags?: string[];
-  extras?: string;
+  extras?: string | string[];
 };
 type Section = { manuName: string; content: Record<string, Item[]> };
 
@@ -43,11 +43,33 @@ const formatPrice = (p?: number) =>
   typeof p === "number" ? `£${p.toFixed(2)}` : "";
 
 function MenuPage() {
-  const [active, setActive] = useState(SECTIONS[0]?.manuName ?? "");
+  const [activeSection, setActiveSection] = useState(SECTIONS[0]?.manuName ?? "");
   const current = useMemo(
-    () => SECTIONS.find((s) => s.manuName === active) ?? SECTIONS[0],
-    [active],
+    () => SECTIONS.find((s) => s.manuName === activeSection) ?? SECTIONS[0],
+    [activeSection],
   );
+  const categories = useMemo(
+    () => (current ? Object.keys(current.content) : []),
+    [current],
+  );
+  const [activeCategory, setActiveCategory] = useState(categories[0] ?? "");
+
+  // Reset category when section changes
+  const sectionKey = current?.manuName ?? "";
+  const firstCat = categories[0] ?? "";
+  if (activeCategory && !categories.includes(activeCategory)) {
+    // safe: state update during render via setter only if changed
+  }
+
+  const handleSectionChange = (name: string) => {
+    setActiveSection(name);
+    const next = SECTIONS.find((s) => s.manuName === name);
+    const firstCategory = next ? Object.keys(next.content)[0] : "";
+    setActiveCategory(firstCategory ?? "");
+  };
+
+  const effectiveCategory = categories.includes(activeCategory) ? activeCategory : firstCat;
+  const items = current?.content[effectiveCategory] ?? [];
 
   return (
     <section className="relative pt-40 pb-28 md:pt-48 md:pb-32">
@@ -68,12 +90,12 @@ function MenuPage() {
 
         <div className="mt-12 flex flex-wrap gap-2 border-y border-border py-4">
           {SECTIONS.map((s) => {
-            const isActive = s.manuName === current?.manuName;
+            const isActive = s.manuName === sectionKey;
             return (
               <button
                 key={s.manuName}
                 type="button"
-                onClick={() => setActive(s.manuName)}
+                onClick={() => handleSectionChange(s.manuName)}
                 className={`px-5 py-2 text-[0.7rem] uppercase tracking-[0.28em] transition-colors ${
                   isActive
                     ? "bg-copper/15 text-copper border border-copper/60"
@@ -86,64 +108,81 @@ function MenuPage() {
           })}
         </div>
 
-        <div className="mt-16 space-y-20">
-          {current &&
-            Object.entries(current.content).map(([category, items]) => (
-              <div key={category}>
-                <div className="mb-8 flex items-baseline gap-4">
-                  <h2 className="font-display text-xl uppercase tracking-[0.25em] text-copper md:text-2xl">
-                    {formatCategory(category)}
-                  </h2>
-                  <span className="h-px flex-1 bg-border" />
-                  <span className="font-display text-xs text-muted-foreground">
-                    {String(items.length).padStart(2, "0")}
-                  </span>
+        <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 border-b border-border pb-4">
+          {categories.map((cat) => {
+            const isActive = cat === effectiveCategory;
+            return (
+              <button
+                key={cat}
+                type="button"
+                onClick={() => setActiveCategory(cat)}
+                className={`relative pb-1 text-[0.7rem] uppercase tracking-[0.28em] transition-colors ${
+                  isActive
+                    ? "text-copper after:absolute after:-bottom-[17px] after:left-0 after:right-0 after:h-[2px] after:bg-copper"
+                    : "text-muted-foreground hover:text-cream"
+                }`}
+              >
+                {formatCategory(cat)}
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="mt-12">
+          <div className="mb-8 flex items-baseline gap-4">
+            <h2 className="font-display text-xl uppercase tracking-[0.25em] text-copper md:text-2xl">
+              {formatCategory(effectiveCategory)}
+            </h2>
+            <span className="h-px flex-1 bg-border" />
+            <span className="font-display text-xs text-muted-foreground">
+              {String(items.length).padStart(2, "0")}
+            </span>
+          </div>
+          <ul className="divide-y divide-border/60">
+            {items.map((item, idx) => (
+              <li key={`${item.name}-${idx}`} className="grid grid-cols-12 gap-4 py-6">
+                <div className="col-span-9">
+                  <div className="flex items-center gap-3">
+                    <h3 className="font-display text-base uppercase tracking-wide text-cream md:text-lg">
+                      {item.name}
+                    </h3>
+                    {item.tags?.map((t) => (
+                      <span
+                        key={t}
+                        className="border border-copper/50 px-1.5 py-0.5 text-[0.55rem] uppercase tracking-[0.2em] text-copper"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                  {item.description && (
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {item.description}
+                    </p>
+                  )}
+                  {item.options && (
+                    <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
+                      {item.options.map((o) => (
+                        <li key={o} className="before:mr-2 before:text-copper before:content-['—']">
+                          {o}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {item.extras && (
+                    <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[0.7rem] uppercase tracking-[0.2em] text-copper/80">
+                      {(Array.isArray(item.extras) ? item.extras : [item.extras]).map((e) => (
+                        <span key={e}>{e}</span>
+                      ))}
+                    </div>
+                  )}
                 </div>
-                <ul className="divide-y divide-border/60">
-                  {items.map((item, idx) => (
-                    <li key={`${item.name}-${idx}`} className="grid grid-cols-12 gap-4 py-6">
-                      <div className="col-span-9">
-                        <div className="flex items-center gap-3">
-                          <h3 className="font-display text-base uppercase tracking-wide text-cream md:text-lg">
-                            {item.name}
-                          </h3>
-                          {item.tags?.map((t) => (
-                            <span
-                              key={t}
-                              className="border border-copper/50 px-1.5 py-0.5 text-[0.55rem] uppercase tracking-[0.2em] text-copper"
-                            >
-                              {t}
-                            </span>
-                          ))}
-                        </div>
-                        {item.description && (
-                          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                            {item.description}
-                          </p>
-                        )}
-                        {item.options && (
-                          <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                            {item.options.map((o) => (
-                              <li key={o} className="before:mr-2 before:text-copper before:content-['—']">
-                                {o}
-                              </li>
-                            ))}
-                          </ul>
-                        )}
-                        {item.extras && (
-                          <p className="mt-2 text-[0.7rem] uppercase tracking-[0.2em] text-copper/80">
-                            {item.extras}
-                          </p>
-                        )}
-                      </div>
-                      <div className="col-span-3 text-right font-display text-base text-cream md:text-lg">
-                        {formatPrice(item.price)}
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                <div className="col-span-3 text-right font-display text-base text-cream md:text-lg">
+                  {formatPrice(item.price)}
+                </div>
+              </li>
             ))}
+          </ul>
         </div>
       </div>
     </section>
