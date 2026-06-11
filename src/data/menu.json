@@ -66,10 +66,10 @@
             "name": "DOUBLE BREAKFAST ROLL",
             "price": 5.5,
             "description": "Two Fillings Of Either Bacon, Sausage, Fried Egg or Haggis",
-            "extras": "+£2 Each"
+            "extras": "+\u00a32 Each"
           },
           {
-            "name": "ÇILBIR (TURKISH POACHED EGGS)",
+            "name": "\u00c7ILBIR (TURKISH POACHED EGGS)",
             "price": 13.45,
             "tags": [
               "v"
@@ -268,10 +268,10 @@
             "price": 14.95,
             "description": "Angus Beef, Lettuce, Tomato, Red Onion, Sliced Cheese, Served With Fries",
             "extras": [
-              "Bacon +£2",
-              "Egg +£2",
-              "Haggis +£2",
-              "Extra Cheese +£2"
+              "Bacon +\u00a32",
+              "Egg +\u00a32",
+              "Haggis +\u00a32",
+              "Extra Cheese +\u00a32"
             ]
           },
           {
@@ -325,8 +325,8 @@
             "name": "FRIES",
             "price": 4.95,
             "extras": [
-              "Parmesan & Truffle +£2",
-              "Cajun +£2"
+              "Parmesan & Truffle +\u00a32",
+              "Cajun +\u00a32"
             ]
           },
           {
@@ -363,7 +363,239 @@
     },
     {
       "manuName": "Dinner",
-      "content": {}
+      "content": {
+        "STARTER": [
+          {
+            "name": "HOMEMADE SOUP OF THE DAY",
+            "price": 7.45,
+            "tags": [
+              "ve"
+            ],
+            "description": "Served with Bread & Butter"
+          },
+          {
+            "name": "BRUSCHETTA",
+            "price": 8.95,
+            "tags": [
+              "v"
+            ],
+            "description": "Crusty Bread Rubbed With Garlic, Herbs, Tomatoes & Feta Cheese"
+          },
+          {
+            "name": "CRISPY CHEESE ROLLS",
+            "price": 8.95,
+            "tags": [
+              "v"
+            ],
+            "description": "Pan Fried Pastry Filled with Feta Cheese & Herbs"
+          },
+          {
+            "name": "CALAMARI",
+            "price": 8.95,
+            "description": "Crispy Fried Squid with Tartare Sauce"
+          },
+          {
+            "name": "CAPRESE SALAD",
+            "price": 8.95,
+            "tags": [
+              "v"
+            ],
+            "description": "Fresh mozzarella, vine tomatoes & basil leaves, finished with extra virgin olive oil and balsamic glaze."
+          },
+          {
+            "name": "KIDS MENU",
+            "price": 10.95,
+            "description": "Served with a Glass of Juice - Up to 12 years old",
+            "options": [
+              "Chicken Nuggets With Chips",
+              "Mini Pasta (Choice of any Pasta)"
+            ]
+          }
+        ],
+        "DINNER": [
+          {
+            "name": "FISH & CHIPS",
+            "price": 17.95,
+            "description": "Breaded Haddock Fish & Chips (Served with Peas, Lemon & Tartar Sauce)"
+          },
+          {
+            "name": "CHARGRILLED RIB EYE STEAK",
+            "price": 27.95,
+            "description": "Served with Roast Mix Vegetable & Fries"
+          },
+          {
+            "name": "ZESTY LEMON CHICKEN",
+            "price": 18.95,
+            "tags": [
+              "gf"
+            ],
+            "description": "Marinated Grilled Lemon Chicken, Served with Cacik, Mix Garden Salad & Rice"
+          },
+          {
+            "name": "GRILLED SEABASS",
+            "price": 19.95,
+            "tags": [
+              "gf"
+            ],
+            "description": "Served with Roasted Mix Vegetables & Fries"
+          },
+          {
+            "name": "STUFFED AUBERGINE",
+            "price": 18.95,
+            "tags": [
+              "ve",
+              "gf"
+            ],
+            "description": "Roasted Aubergine, Stuffed with Roast Pepper, Tomato, Onion & Garlic Served with Rice"
+          },
+          {
+            "name": "MINCED STUFFED AUBERGINE",
+            "price": 19.95,
+            "tags": [
+              "gf"
+            ],
+            "description": "Roasted Aubergine, Stuffed with Roast Pepper, Tomato, Onion, Slow-Cooked Steak Mince & Garlic Served with Rice"
+          },
+          {
+            "name": "MIX MEZZE PLATTER",
+            "price": 18.95,
+            "tags": [
+              "v"
+            ],
+            "description": "Vine Leaves, Marinated Artichoke Hearts, Hummus, Halloumi, Cacik, Salad & Pita Bread"
+          },
+          {
+            "name": "CHICKPEA CURRY",
+            "price": 17.95,
+            "tags": [
+              "ve"
+            ],
+            "description": "Wholesome Dish with a Smooth & Uplifting Curry Sauce, Served on a Bed of Rice & Mix Garden Salad"
+          },
+          {
+            "name": "HAGGIS, NEEPS & TATTIES",
+            "price": 15.5,
+            "description": "Traditional Scottish haggis served with mashed turnips and potatoes, finished with rich gravy"
+          }
+        ],
+        "PASTA": [
+          {
+            "name": "BOLOGNESE",
+            "price": 14.95,
+            "description": "Served with Our Own House Sauce, Slowly Cooked Steak Mince & Parmesan Cheese"
+          },
+          {
+            "name": "CARBONARA",
+            "price": 14.95,
+            "description": "Fresh Egg in Tasty Carbonara Sauce with Ham & Parmesan Cheese"
+          },
+          {
+            "name": "PRIMAVERA",
+            "price": 14.45,
+            "tags": [
+              "ve"
+            ],
+            "description": "Pan Grilled Mix Peppers, Tomato, Red Onion & Asparagus (Parmesan Cheese Optional)"
+          }
+        ],
+        "BURGERS": [
+          {
+            "name": "NETHER BOW BURGER",
+            "price": 16.95,
+            "description": "Angus Beef, Lettuce, Tomato, Red Onion, Sliced Cheese, Served With Fries",
+            "extras": [
+              "Bacon +\u00a32",
+              "Egg +\u00a32",
+              "Haggis +\u00a32",
+              "Extra Cheese +\u00a32"
+            ]
+          },
+          {
+            "name": "CHICKEN BURGER",
+            "price": 15.95,
+            "description": "Tomato, Red Onion, Lettuce & Chips"
+          },
+          {
+            "name": "ROBBIE BURNS HAGGIS BURGER",
+            "price": 15.95,
+            "description": "Tomato, Red Onion, Lettuce & Chips"
+          },
+          {
+            "name": "VEGGIE BURGER",
+            "price": 14.95,
+            "tags": [
+              "v"
+            ],
+            "description": "Tomato, Red Onion, Lettuce & Chips"
+          }
+        ],
+        "SALADS": [
+          {
+            "name": "SMOKED SALMON SALAD",
+            "price": 14.95,
+            "description": "Hot Smoked Salmon, Avocado, Walnuts, Vine Tomato, Cucumber, Mix Garden Salad & House Dressing"
+          },
+          {
+            "name": "CHICKEN SALAD",
+            "price": 13.45,
+            "description": "Marinated Grill Chicken, Vine Tomato, Cucumber, Mix Garden Salad & House Dressing"
+          },
+          {
+            "name": "HALLOUMI SALAD",
+            "price": 13.45,
+            "tags": [
+              "v"
+            ],
+            "description": "Halloumi, Vine Tomato, Cucumber, Mix Garden Salad & House Dressing"
+          }
+        ],
+        "SHARING": [
+          {
+            "name": "BREAD & BUTTER",
+            "price": 4.95,
+            "tags": [
+              "v"
+            ]
+          },
+          {
+            "name": "FRIES",
+            "price": 5.95,
+            "extras": [
+              "Parmesan & Truffle + \u00a32",
+              "Cajun + \u00a32"
+            ]
+          },
+          {
+            "name": "HUMMUS",
+            "price": 6.95,
+            "tags": [
+              "ve"
+            ],
+            "description": "Served with Naan Bread"
+          }
+        ],
+        "DESSERTS": [
+          {
+            "name": "CHOCOLATE CAKE",
+            "price": 5.95,
+            "description": "Served with Whipped Cream & Chocolate Sauce"
+          },
+          {
+            "name": "CARROT CAKE",
+            "price": 5.95,
+            "description": "Served with Whipped Cream & Toffee Sauce"
+          },
+          {
+            "name": "CARAMEL SHORT CAKE",
+            "price": 4.55
+          },
+          {
+            "name": "SCONES",
+            "price": 4.55,
+            "description": "Fruit Scones Served with Butter & Jam"
+          }
+        ]
+      }
     },
     {
       "manuName": "Drink",
