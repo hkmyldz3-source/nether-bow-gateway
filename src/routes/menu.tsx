@@ -32,7 +32,7 @@ type Item = {
 };
 type Section = { manuName: string; content: Record<string, Item[]> };
 
-const SECTIONS = (menuData as { menu: Section[] }).menu.filter(
+const SECTIONS = (menuData as unknown as { menu: Section[] }).menu.filter(
   (s) => s.content && Object.keys(s.content).length > 0,
 );
 
