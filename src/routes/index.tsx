@@ -4,6 +4,14 @@ import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
 import heroEspresso from "@/assets/hero-espresso.jpg";
 import heroStone from "@/assets/hero-stone.jpg";
 import heroPour from "@/assets/hero-pour.jpg";
+import heritageOld from "@/assets/heritage-old.jpg";
+import heritageNew from "@/assets/heritage-new.jpg";
+import menuPastry from "@/assets/menu-pastry.jpg";
+import menuEspresso from "@/assets/menu-espresso.jpg";
+import gallery1 from "@/assets/gallery-1.jpg";
+import gallery2 from "@/assets/gallery-2.jpg";
+import gallery3 from "@/assets/gallery-3.jpg";
+import gallery4 from "@/assets/gallery-4.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -57,6 +65,7 @@ function HomePage() {
   }, []);
 
   return (
+    <>
     <section className="relative h-[100svh] min-h-[680px] w-full overflow-hidden">
       {HERO_SLIDES.map((s, idx) => (
         <div
@@ -146,5 +155,127 @@ function HomePage() {
         </div>
       </div>
     </section>
+
+    {/* Heritage excerpt */}
+    <section className="relative border-t border-border py-24 md:py-36">
+      <div className="mx-auto grid max-w-[1400px] gap-14 px-6 md:grid-cols-12 md:gap-16 md:px-10">
+        <div className="md:col-span-5">
+          <div className="grid grid-cols-2 gap-3 md:gap-5">
+            <div className="relative aspect-[3/4] overflow-hidden">
+              <img src={heritageOld} alt="Etching of the Netherbow Port" loading="lazy" className="h-full w-full object-cover grayscale-[0.3] sepia-[0.4]" />
+              <span className="absolute bottom-3 left-3 eyebrow text-cream/80">c. 1450</span>
+            </div>
+            <div className="relative aspect-[3/4] translate-y-10 overflow-hidden">
+              <img src={heritageNew} alt="Brass espresso bar interior" loading="lazy" className="h-full w-full object-cover" />
+              <span className="absolute bottom-3 left-3 eyebrow text-cream/80">Today</span>
+            </div>
+          </div>
+        </div>
+        <div className="md:col-span-7 md:pl-6">
+          <div className="mb-6 flex items-center gap-4">
+            <span className="h-px w-14 bg-copper" />
+            <span className="eyebrow">I — Heritage</span>
+          </div>
+          <h2 className="font-display text-4xl font-medium uppercase leading-[1.05] text-cream md:text-6xl">
+            Eight centuries of <span className="italic text-copper font-normal normal-case">threshold.</span>
+          </h2>
+          <p className="mt-8 max-w-xl text-[0.95rem] leading-[1.85] text-muted-foreground">
+            In 1380 the Netherbow Port stood guard at the foot of the Royal Mile —
+            a stone gate, a porter's bell, the threshold between burgh and burgh.
+            The gate fell in 1764. Its brass outline is still set in the cobblestones at our door.
+          </p>
+          <blockquote className="mt-8 max-w-xl border-l border-copper/70 pl-6 italic text-cream/90">
+            "Though the stone gate is gone, the spirit of welcoming travellers remains
+            — only now we serve them coffee instead of charging a toll."
+          </blockquote>
+          <div className="mt-10">
+            <Link to="/heritage" className="btn-outline-copper btn-outline-copper-hover">
+              Read the full heritage
+              <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={1.5} />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Menu trio */}
+    <section className="relative border-t border-border py-24 md:py-36">
+      <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+        <div className="flex flex-wrap items-end justify-between gap-8">
+          <div>
+            <div className="mb-6 flex items-center gap-4">
+              <span className="h-px w-14 bg-copper" />
+              <span className="eyebrow">II — The Carte</span>
+            </div>
+            <h2 className="font-display max-w-3xl text-4xl font-medium uppercase leading-[1.05] text-cream md:text-6xl">
+              Three services, <span className="italic text-copper font-normal normal-case">one threshold.</span>
+            </h2>
+          </div>
+          <Link to="/menu" className="btn-outline-copper btn-outline-copper-hover">
+            Full menu
+            <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={1.5} />
+          </Link>
+        </div>
+
+        <div className="mt-14 grid gap-6 md:grid-cols-3 md:gap-8">
+          {[
+            { img: menuPastry, label: "Lunch", caption: "Breakfast, eggs benny, omelette, plates of the day." },
+            { img: heroStone, label: "Dinner", caption: "Starters, pasta, mains and the steak board." },
+            { img: menuEspresso, label: "Drink", caption: "Specialty espresso, pour-over, milk service & spirits." },
+          ].map((c, idx) => (
+            <Link
+              key={c.label}
+              to="/menu"
+              className="group relative block aspect-[3/4] overflow-hidden border border-border"
+            >
+              <img src={c.img} alt={c.label} loading="lazy" className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-[1.05]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-6">
+                <div className="flex items-center justify-between">
+                  <span className="font-display text-xs text-copper">{String(idx + 1).padStart(2, "0")}</span>
+                  <ArrowUpRight className="h-4 w-4 text-cream opacity-0 transition-opacity group-hover:opacity-100" strokeWidth={1.5} />
+                </div>
+                <h3 className="mt-2 font-display text-2xl uppercase tracking-[0.12em] text-cream md:text-3xl">{c.label}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.caption}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Gallery preview */}
+    <section className="relative border-t border-border py-24 md:py-36">
+      <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+        <div className="flex flex-wrap items-end justify-between gap-8">
+          <div>
+            <div className="mb-6 flex items-center gap-4">
+              <span className="h-px w-14 bg-copper" />
+              <span className="eyebrow">III — Inside the Port</span>
+            </div>
+            <h2 className="font-display max-w-3xl text-4xl font-medium uppercase leading-[1.05] text-cream md:text-6xl">
+              Brass &amp; <span className="italic text-copper font-normal normal-case">brick.</span>
+            </h2>
+          </div>
+          <Link to="/gallery" className="btn-outline-copper btn-outline-copper-hover">
+            Enter the gallery
+            <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={1.5} />
+          </Link>
+        </div>
+
+        <div className="mt-14 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
+          {[gallery1, gallery2, gallery3, gallery4].map((src, idx) => (
+            <figure key={idx} className={`relative overflow-hidden ${idx % 2 === 1 ? "md:translate-y-10" : ""}`}>
+              <img src={src} alt="" loading="lazy" className="aspect-[3/4] w-full object-cover transition-transform duration-[1200ms] hover:scale-[1.05]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent" />
+              <figcaption className="absolute bottom-3 left-3 font-display text-xs text-copper">
+                {String(idx + 1).padStart(2, "0")}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+    </>
   );
 }
