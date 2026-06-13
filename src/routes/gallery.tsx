@@ -52,12 +52,12 @@ function GalleryPage() {
         </div>
       </div>
 
-      <div className="mt-16 overflow-x-auto pb-6 [scrollbar-color:var(--copper)_transparent]">
-        <div className="flex gap-5 px-6 md:px-10">
+      <div className="mt-16 px-6 md:px-10">
+        <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {GALLERY.map((g, idx) => (
-            <figure key={idx} className="relative flex-shrink-0 overflow-hidden" style={{ width: "clamp(280px, 32vw, 460px)", height: "clamp(380px, 60vh, 580px)" }}>
-              <img src={g.img} alt={g.caption} loading="lazy" className="h-full w-full object-cover transition-transform duration-[1200ms] hover:scale-[1.04]" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/10 to-transparent" />
+            <figure key={idx} className="group relative aspect-[4/5] overflow-hidden border border-border">
+              <img src={g.img} alt={g.caption} loading="lazy" className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-[1.05]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
               <figcaption className="absolute bottom-5 left-5 right-5 flex items-end justify-between text-cream">
                 <span className="text-[0.68rem] uppercase tracking-[0.28em]">{g.caption}</span>
                 <span className="font-display text-sm text-copper">{String(idx + 1).padStart(2, "0")}</span>
