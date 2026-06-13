@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowUpRight } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const NAV = [
   { to: "/heritage", label: "Heritage" },
@@ -12,6 +12,7 @@ const NAV = [
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
@@ -22,7 +23,7 @@ export function Header() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled
+        scrolled || open
           ? "backdrop-blur-xl bg-background/85 border-b border-border"
           : "bg-transparent"
       }`}
@@ -46,14 +47,33 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <Link
-          to="/reservation"
-          className="btn-outline-copper btn-outline-copper-hover hidden md:inline-flex"
+        <button
+          type="button"
+          aria-label={open ? "Close menu" : "Open menu"}
+          onClick={() => setOpen((o) => !o)}
+          className="grid h-10 w-10 place-items-center border border-copper/50 text-cream transition-colors hover:bg-copper/15 hover:border-copper lg:hidden"
         >
-          Enter the Port
-          <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={1.5} />
-        </Link>
+          {open ? <X className="h-4 w-4" strokeWidth={1.5} /> : <Menu className="h-4 w-4" strokeWidth={1.5} />}
+        </button>
       </div>
+      {open && (
+        <nav className="border-t border-border bg-background/95 backdrop-blur-xl lg:hidden">
+          <ul className="mx-auto flex max-w-[1400px] flex-col px-6 py-4 md:px-10">
+            {NAV.map((item) => (
+              <li key={item.to}>
+                <Link
+                  to={item.to}
+                  onClick={() => setOpen(false)}
+                  activeProps={{ className: "text-copper" }}
+                  className="block py-3 text-[0.78rem] uppercase tracking-[0.28em] text-muted-foreground hover:text-cream"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
     </header>
   );
 }
