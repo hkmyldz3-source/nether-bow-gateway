@@ -1,10 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
-import gallery4 from "@/assets/gallery-4.jpg";
-import gallery5 from "@/assets/gallery-5.jpg";
-import heroEspresso from "@/assets/hero-espresso.jpg";
+import { useState } from "react";
+import { X, Instagram } from "lucide-react";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -17,22 +13,27 @@ export const Route = createFileRoute("/gallery")({
       },
       { property: "og:title", content: "Gallery — The Nether Bow Port" },
       { property: "og:description", content: "A study in brass & brick." },
-      { property: "og:image", content: gallery1 },
     ],
   }),
   component: GalleryPage,
 });
 
+// Instagram-style images from Pexels (placeholder URLs - in production these would come from Instagram API)
 const GALLERY = [
-  { img: gallery1, caption: "The Vault Room · Sandstone & Copper" },
-  { img: gallery2, caption: "Copper Service Lines · Detail" },
-  { img: gallery3, caption: "Marble Bar · Morning Light" },
-  { img: gallery4, caption: "Lever Group · La Marzocco GS3" },
-  { img: gallery5, caption: "The Royal Mile · Blue Hour" },
-  { img: heroEspresso, caption: "Espresso Service · House Blend" },
+  { img: "https://images.pexels.com/photos/1493370/pexels-photo-1493370.jpeg?auto=compress&cs=tinysrgb&w=600", caption: "The Vault Room · Sandstone & Copper" },
+  { img: "https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?auto=compress&cs=tinysrgb&w=600", caption: "Copper Service Lines · Detail" },
+  { img: "https://images.pexels.com/photos/2192805/pexels-photo-2192805.jpeg?auto=compress&cs=tinysrgb&w=600", caption: "Marble Bar · Morning Light" },
+  { img: "https://images.pexels.com/photos/2394/pexels-photo-2394.jpeg?auto=compress&cs=tinysrgb&w=600", caption: "Lever Group · La Marzocco GS3" },
+  { img: "https://images.pexels.com/photos/323682/pexels-photo-323682.jpeg?auto=compress&cs=tinysrgb&w=600", caption: "The Royal Mile · Blue Hour" },
+  { img: "https://images.pexels.com/photos/1251175/pexels-photo-1251175.jpeg?auto=compress&cs=tinysrgb&w=600", caption: "Espresso Service · House Blend" },
+  { img: "https://images.pexels.com/photos/1415555/pexels-photo-1415555.jpeg?auto=compress&cs=tinysrgb&w=600", caption: "Barista at Work" },
+  { img: "https://images.pexels.com/photos/2064312/pexels-photo-2064312.jpeg?auto=compress&cs=tinysrgb&w=600", caption: "Latte Art Detail" },
+  { img: "https://images.pexels.com/photos/1509062/pexels-photo-1509062.jpeg?auto=compress&cs=tinysrgb&w=600", caption: "Evening Ambiance" },
 ];
 
 function GalleryPage() {
+  const [selectedImage, setSelectedImage] = useState<(typeof GALLERY)[0] | null>(null);
+
   return (
     <section className="relative pt-40 pb-28 md:pt-48 md:pb-40">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
@@ -46,26 +47,67 @@ function GalleryPage() {
               A study in <span className="italic text-copper font-normal normal-case">brass &amp; brick.</span>
             </h1>
           </div>
-          <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-            Scroll the room — interiors, surfaces, and the slow theatre of service.
-          </p>
+          <div className="flex items-center gap-6">
+            <a href="#" className="copper-underline flex items-center gap-2 text-sm text-muted-foreground hover:text-cream">
+              <Instagram className="h-4 w-4" strokeWidth={1.5} />
+              @netherbowport
+            </a>
+          </div>
         </div>
       </div>
 
       <div className="mt-16 px-6 md:px-10">
-        <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-[1400px] grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4 lg:gap-4">
           {GALLERY.map((g, idx) => (
-            <figure key={idx} className="group relative aspect-[4/5] overflow-hidden border border-border">
-              <img src={g.img} alt={g.caption} loading="lazy" className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-[1.05]" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
-              <figcaption className="absolute bottom-5 left-5 right-5 flex items-end justify-between text-cream">
-                <span className="text-[0.68rem] uppercase tracking-[0.28em]">{g.caption}</span>
-                <span className="font-display text-sm text-copper">{String(idx + 1).padStart(2, "0")}</span>
-              </figcaption>
-            </figure>
+            <button
+              key={idx}
+              type="button"
+              onClick={() => setSelectedImage(g)}
+              className="group relative aspect-square overflow-hidden border border-border transition-all hover:border-copper/60 focus:outline-none focus:ring-2 focus:ring-copper"
+            >
+              <img
+                src={g.img}
+                alt={g.caption}
+                loading="lazy"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-background/0 transition-colors group-hover:bg-background/20" />
+            </button>
           ))}
         </div>
       </div>
+
+      {/* Modal */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-background/95 backdrop-blur-sm"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            type="button"
+            onClick={() => setSelectedImage(null)}
+            className="absolute right-6 top-6 grid h-10 w-10 place-items-center border border-copper/50 text-cream transition-colors hover:bg-copper/15 hover:border-copper"
+          >
+            <X className="h-5 w-5" strokeWidth={1.5} />
+          </button>
+          <div
+            className="relative max-h-[85vh] max-w-[90vw] md:max-w-[70vw] lg:max-w-[50vw]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={selectedImage.img.replace("w=600", "w=1200")}
+              alt={selectedImage.caption}
+              className="max-h-[85vh] w-auto object-contain"
+            />
+            <div className="absolute -bottom-16 left-0 right-0 flex items-center justify-between px-4">
+              <span className="text-[0.7rem] uppercase tracking-[0.28em] text-cream">{selectedImage.caption}</span>
+              <a href="#" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-cream">
+                <Instagram className="h-4 w-4" strokeWidth={1.5} />
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
