@@ -84,10 +84,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "An elite industrial coffee house on the Royal Mile, built on the site of Edinburgh's lost city gate. Specialty espresso, artisan pastries, heritage." },
       { name: "author", content: "The Nether Bow Port" },
       { property: "og:title", content: "The Nether Bow Port — Edinburgh's Heritage Coffee House" },
-      { property: "og:description", content: "Where the city began. Specialty coffee on Edinburgh's Royal Mile, on the site of the lost Netherbow Port." },
+      { property: "og:description", content: "An elite industrial coffee house on the Royal Mile, built on the site of Edinburgh's lost city gate. Specialty espresso, artisan pastries, heritage." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "The Nether Bow Port — Edinburgh's Heritage Coffee House" },
+      { name: "twitter:description", content: "An elite industrial coffee house on the Royal Mile, built on the site of Edinburgh's lost city gate. Specialty espresso, artisan pastries, heritage." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a80a3909-7f9b-44ec-8c84-cde43b645fea/id-preview-08e14dd5--bb674c74-f796-429e-ae8b-da07edb72952.lovable.app-1781407120379.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a80a3909-7f9b-44ec-8c84-cde43b645fea/id-preview-08e14dd5--bb674c74-f796-429e-ae8b-da07edb72952.lovable.app-1781407120379.png" },
     ],
     links: [
       {
