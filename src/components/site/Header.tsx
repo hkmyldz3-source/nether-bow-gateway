@@ -35,7 +35,7 @@ export function Header() {
         >
           THE NETHER BOW PORT
         </Link>
-        <nav className="hidden items-center gap-9 lg:flex">
+        <nav className="hidden items-center gap-9 xl:flex">
           {NAV.map((item) => (
             <Link
               key={item.to}
@@ -51,13 +51,13 @@ export function Header() {
           type="button"
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((o) => !o)}
-          className="grid h-10 w-10 place-items-center border border-copper/50 text-cream transition-colors hover:bg-copper/15 hover:border-copper lg:hidden"
+          className="grid h-10 w-10 place-items-center border border-copper/50 text-cream transition-colors hover:bg-copper/15 hover:border-copper xl:hidden"
         >
           {open ? <X className="h-4 w-4" strokeWidth={1.5} /> : <Menu className="h-4 w-4" strokeWidth={1.5} />}
         </button>
       </div>
       {open && (
-        <nav className="border-t border-border bg-background/95 backdrop-blur-xl lg:hidden">
+        <nav className="border-t border-border bg-background/95 backdrop-blur-xl xl:hidden">
           <ul className="mx-auto flex max-w-[1400px] flex-col px-6 py-4 md:px-10">
             {NAV.map((item) => (
               <li key={item.to}>
