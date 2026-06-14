@@ -108,24 +108,29 @@ function MenuPage() {
           })}
         </div>
 
-        <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 border-b border-border pb-4">
-          {categories.map((cat) => {
-            const isActive = cat === effectiveCategory;
-            return (
-              <button
-                key={cat}
-                type="button"
-                onClick={() => setActiveCategory(cat)}
-                className={`relative pb-1 text-[0.7rem] uppercase tracking-[0.28em] transition-colors ${
-                  isActive
-                    ? "text-copper after:absolute after:-bottom-[17px] after:left-0 after:right-0 after:h-[2px] after:bg-copper"
-                    : "text-muted-foreground hover:text-cream"
-                }`}
-              >
-                {formatCategory(cat)}
-              </button>
-            );
-          })}
+        <div className="mt-8 border-b border-border pb-1">
+          <div className="flex flex-wrap gap-x-6 gap-y-3">
+            {categories.map((cat) => {
+              const isActive = cat === effectiveCategory;
+              return (
+                <button
+                  key={cat}
+                  type="button"
+                  onClick={() => setActiveCategory(cat)}
+                  className={`relative pb-2 text-[0.7rem] uppercase tracking-[0.28em] transition-colors ${
+                    isActive
+                      ? "text-copper"
+                      : "text-muted-foreground hover:text-cream"
+                  }`}
+                >
+                  {formatCategory(cat)}
+                  {isActive && (
+                    <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-copper" />
+                  )}
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         <div className="mt-12">
