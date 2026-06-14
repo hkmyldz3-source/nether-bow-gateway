@@ -117,7 +117,7 @@ function MenuPage() {
                   key={cat}
                   type="button"
                   onClick={() => setActiveCategory(cat)}
-                  className={`relative pb-3 text-[0.7rem] uppercase tracking-[0.28em] transition-colors ${
+                  className={`relative pb-4 text-[0.7rem] uppercase tracking-[0.28em] transition-colors ${
                     isActive
                       ? "text-copper"
                       : "text-muted-foreground hover:text-cream"
