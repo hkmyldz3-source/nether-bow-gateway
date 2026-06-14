@@ -41,11 +41,11 @@ export function Footer() {
             <div className="mt-6 flex items-center gap-6 text-sm text-muted-foreground">
               <a href="mailto:hello@netherbowport.co" className="copper-underline flex items-center gap-2 hover:text-cream">
                 <Mail className="h-3.5 w-3.5" strokeWidth={1.5} />
-                <span>hello@netherbowport.co</span>
+                <span>hello@thenetherbowport.com</span>
               </a>
               <a href="tel:+441310000000" className="copper-underline flex items-center gap-2 hover:text-cream">
                 <Phone className="h-3.5 w-3.5" strokeWidth={1.5} />
-                <span>+44 131 000 0000</span>
+                <span>+44 131 629 2680</span>
               </a>
             </div>
             <div className="mt-8 flex items-center gap-3">
