@@ -90,7 +90,7 @@ function ContactPage() {
               </li>
               <li className="flex items-center gap-2 pt-2">
                 <Phone className="h-3.5 w-3.5 text-copper" strokeWidth={1.5} />
-                <a href="tel:+441310000000" className="hover:text-cream">+44 131 000 0000</a>
+                <a href="tel:+441310000000" className="hover:text-cream">+44 131 629 2680</a>
               </li>
             </ul>
 
