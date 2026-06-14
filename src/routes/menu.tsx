@@ -18,6 +18,42 @@ export const Route = createFileRoute("/menu")({
         content: "Specialty espresso, pour-over and milk service on the Royal Mile.",
       },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Menu",
+          name: "The Nether Bow Port — Menu",
+          url: "https://netherbow-port-gateway.lovable.app/menu",
+          inLanguage: "en-GB",
+          hasMenuSection: (menuData as unknown as { menu: Section[] }).menu
+            .filter((s) => s.content && Object.keys(s.content).length > 0)
+            .map((s) => ({
+              "@type": "MenuSection",
+              name: s.manuName,
+              hasMenuSection: Object.entries(s.content).map(([cat, items]) => ({
+                "@type": "MenuSection",
+                name: formatCategory(cat),
+                hasMenuItem: items.map((it) => ({
+                  "@type": "MenuItem",
+                  name: it.name,
+                  ...(it.description ? { description: it.description } : {}),
+                  ...(typeof it.price === "number"
+                    ? {
+                        offers: {
+                          "@type": "Offer",
+                          price: it.price.toFixed(2),
+                          priceCurrency: "GBP",
+                        },
+                      }
+                    : {}),
+                })),
+              })),
+            })),
+        }),
+      },
+    ],
   }),
   component: MenuPage,
 });

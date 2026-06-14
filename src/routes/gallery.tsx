@@ -86,6 +86,7 @@ function GalleryPage() {
           <button
             type="button"
             onClick={() => setSelectedImage(null)}
+            aria-label="Close"
             className="absolute right-6 top-6 grid h-10 w-10 place-items-center border border-copper/50 text-cream transition-colors hover:bg-copper/15 hover:border-copper"
           >
             <X className="h-5 w-5" strokeWidth={1.5} />

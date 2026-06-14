@@ -30,6 +30,50 @@ export const Route = createFileRoute("/")({
       { property: "og:image", content: heroEspresso },
       { name: "twitter:image", content: heroEspresso },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CafeOrCoffeeShop",
+          name: "The Nether Bow Port",
+          description:
+            "Heritage coffee house on Edinburgh's Royal Mile, built on the site of the lost Netherbow Port city gate.",
+          url: "https://netherbow-port-gateway.lovable.app",
+          image: "https://netherbow-port-gateway.lovable.app/og-image.jpg",
+          telephone: "+44 131 000 0000",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Royal Mile",
+            addressLocality: "Edinburgh",
+            addressRegion: "Scotland",
+            postalCode: "EH1 1SR",
+            addressCountry: "GB",
+          },
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: 55.9508,
+            longitude: -3.1839,
+          },
+          servesCuisine: ["Coffee", "Breakfast", "Lunch", "Dinner"],
+          priceRange: "££",
+          openingHoursSpecification: [
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              opens: "07:30",
+              closes: "22:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: ["Saturday", "Sunday"],
+              opens: "08:00",
+              closes: "23:00",
+            },
+          ],
+        }),
+      },
+    ],
   }),
   component: HomePage,
 });
