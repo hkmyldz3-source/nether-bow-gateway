@@ -1,6 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { X, Instagram } from "lucide-react";
+import gallery01 from "@/assets/gallery/gallery01.jpg";
+import gallery02 from "@/assets/gallery/gallery02.jpg";
+import gallery03 from "@/assets/gallery/gallery03.jpg";
+import gallery04 from "@/assets/gallery/gallery04.jpg";
+import gallery05 from "@/assets/gallery/gallery05.jpg";
+import gallery06 from "@/assets/gallery/gallery06.jpg";
+import gallery07 from "@/assets/gallery/gallery07.jpg";
+import gallery08 from "@/assets/gallery/gallery08.jpg";
+import gallery09 from "@/assets/gallery/gallery09.jpg";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -13,22 +22,22 @@ export const Route = createFileRoute("/gallery")({
       },
       { property: "og:title", content: "Gallery — The Nether Bow Port" },
       { property: "og:description", content: "A study in brass & brick." },
+      { property: "og:image", content: gallery01 },
     ],
   }),
   component: GalleryPage,
 });
 
-// Instagram-style images from Pexels (placeholder URLs - in production these would come from Instagram API)
 const GALLERY = [
-  { img: "https://images.pexels.com/photos/1493370/pexels-photo-1493370.jpeg?auto=compress&cs=tinysrgb&w=600", caption: "The Vault Room · Sandstone & Copper" },
-  { img: "https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?auto=compress&cs=tinysrgb&w=600", caption: "Copper Service Lines · Detail" },
-  { img: "https://images.pexels.com/photos/2192805/pexels-photo-2192805.jpeg?auto=compress&cs=tinysrgb&w=600", caption: "Marble Bar · Morning Light" },
-  { img: "https://images.pexels.com/photos/2394/pexels-photo-2394.jpeg?auto=compress&cs=tinysrgb&w=600", caption: "Lever Group · La Marzocco GS3" },
-  { img: "https://images.pexels.com/photos/323682/pexels-photo-323682.jpeg?auto=compress&cs=tinysrgb&w=600", caption: "The Royal Mile · Blue Hour" },
-  { img: "https://images.pexels.com/photos/1251175/pexels-photo-1251175.jpeg?auto=compress&cs=tinysrgb&w=600", caption: "Espresso Service · House Blend" },
-  { img: "https://images.pexels.com/photos/1415555/pexels-photo-1415555.jpeg?auto=compress&cs=tinysrgb&w=600", caption: "Barista at Work" },
-  { img: "https://images.pexels.com/photos/2064312/pexels-photo-2064312.jpeg?auto=compress&cs=tinysrgb&w=600", caption: "Latte Art Detail" },
-  { img: "https://images.pexels.com/photos/1509062/pexels-photo-1509062.jpeg?auto=compress&cs=tinysrgb&w=600", caption: "Evening Ambiance" },
+  { img: gallery01, caption: "The Vault Room · Sandstone & Copper" },
+  { img: gallery02, caption: "Copper Service Lines · Detail" },
+  { img: gallery03, caption: "Marble Bar · Morning Light" },
+  { img: gallery04, caption: "Lever Group · La Marzocco GS3" },
+  { img: gallery05, caption: "The Royal Mile · Blue Hour" },
+  { img: gallery06, caption: "Espresso Service · House Blend" },
+  { img: gallery07, caption: "Barista at Work" },
+  { img: gallery08, caption: "Latte Art Detail" },
+  { img: gallery09, caption: "Evening Ambiance" },
 ];
 
 function GalleryPage() {
@@ -96,7 +105,7 @@ function GalleryPage() {
             onClick={(e) => e.stopPropagation()}
           >
             <img
-              src={selectedImage.img.replace("w=600", "w=1200")}
+              src={selectedImage.img}
               alt={selectedImage.caption}
               className="max-h-[85vh] w-auto object-contain"
             />
