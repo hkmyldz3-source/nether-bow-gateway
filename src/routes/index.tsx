@@ -30,6 +30,50 @@ export const Route = createFileRoute("/")({
       { property: "og:image", content: heroEspresso },
       { name: "twitter:image", content: heroEspresso },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CafeOrCoffeeShop",
+          name: "The Nether Bow Port",
+          description:
+            "Heritage coffee house on Edinburgh's Royal Mile, built on the site of the lost Netherbow Port city gate.",
+          url: "https://netherbow-port-gateway.lovable.app",
+          image: "https://netherbow-port-gateway.lovable.app/og-image.jpg",
+          telephone: "+44 131 000 0000",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Royal Mile",
+            addressLocality: "Edinburgh",
+            addressRegion: "Scotland",
+            postalCode: "EH1 1SR",
+            addressCountry: "GB",
+          },
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: 55.9508,
+            longitude: -3.1839,
+          },
+          servesCuisine: ["Coffee", "Breakfast", "Lunch", "Dinner"],
+          priceRange: "££",
+          openingHoursSpecification: [
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              opens: "07:30",
+              closes: "22:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: ["Saturday", "Sunday"],
+              opens: "08:00",
+              closes: "23:00",
+            },
+          ],
+        }),
+      },
+    ],
   }),
   component: HomePage,
 });
@@ -219,16 +263,16 @@ function HomePage() {
 
         <div className="mt-14 grid gap-6 md:grid-cols-3 md:gap-8">
           {[
-            { img: menuPastry, label: "Lunch", caption: "Breakfast, eggs benny, omelette, plates of the day." },
-            { img: heroStone, label: "Dinner", caption: "Starters, pasta, mains and the steak board." },
-            { img: menuEspresso, label: "Drink", caption: "Specialty espresso, pour-over, milk service & spirits." },
+            { img: menuPastry, label: "Lunch", alt: "Lunch menu", caption: "Breakfast, eggs benny, omelette, plates of the day." },
+            { img: heroStone, label: "Dinner", alt: "Dinner selection", caption: "Starters, pasta, mains and the steak board." },
+            { img: menuEspresso, label: "Drink", alt: "Drinks menu", caption: "Specialty espresso, pour-over, milk service & spirits." },
           ].map((c, idx) => (
             <Link
               key={c.label}
               to="/menu"
               className="group relative block aspect-[3/4] overflow-hidden border border-border"
             >
-              <img src={c.img} alt={c.label} loading="lazy" className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-[1.05]" />
+              <img src={c.img} alt={c.alt} loading="lazy" className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-[1.05]" />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-6">
                 <div className="flex items-center justify-between">
