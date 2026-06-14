@@ -22,10 +22,8 @@ export function Footer() {
               <Clock className="h-3 w-3" strokeWidth={1.5} /> Hours
             </div>
             <ul className="mt-5 space-y-2 text-sm text-muted-foreground">
-              <li className="flex justify-between gap-4"><span>Mon — Thu</span><span className="text-cream">07 — 19</span></li>
-              <li className="flex justify-between gap-4"><span>Fri — Sat</span><span className="text-cream">07 — 22</span></li>
-              <li className="flex justify-between gap-4"><span>Sunday</span><span className="text-cream">08 — 18</span></li>
-              <li className="flex justify-between gap-4 border-t border-border pt-3"><span>Festival hours</span><span className="text-copper">06 — 24</span></li>
+              <li className="flex justify-between gap-4"><span>Mon — Sun</span><span className="text-cream">07 — 22</span></li>
+              <li className="flex justify-between gap-4 border-t border-border pt-3"><span>Festival hours</span><span className="text-copper">07 — 24</span></li>
             </ul>
           </div>
 
