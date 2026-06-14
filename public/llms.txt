@@ -1,0 +1,12 @@
+# The Nether Bow Port
+
+> A heritage coffee house on Edinburgh's Royal Mile, built on the site of the lost Netherbow Port city gate. Specialty espresso, lunch, dinner, and artisan pastries.
+
+## Pages
+
+- [Home](/): Overview of the café, heritage, and what to expect.
+- [Heritage](/heritage): The story of the Netherbow Port, Edinburgh's lost city gate, and how the café preserves its memory.
+- [Menu](/menu): Lunch, dinner, and drinks — specialty coffee, plates, and full bill of fare.
+- [Gallery](/gallery): Interior, brass and brick details, espresso bar, and architectural shots.
+- [Reservation](/reservation): Book a table at the café.
+- [Contact](/contact): Contact form, opening hours, and Royal Mile location.
