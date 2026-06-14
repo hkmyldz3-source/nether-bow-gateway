@@ -8,7 +8,7 @@ import heritageOld from "@/assets/heritage-old.jpg";
 import heritageNew from "@/assets/heritage-new.jpg";
 import menuPastry from "@/assets/menu-pastry.jpg";
 import menuEspresso from "@/assets/menu-espresso.jpg";
-import gallery1 from "@/assets/gallery-10.jpg";
+import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
 import gallery4 from "@/assets/gallery-4.jpg";
