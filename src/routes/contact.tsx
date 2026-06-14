@@ -82,11 +82,11 @@ function ContactPage() {
             <ul className="mt-5 space-y-4 text-sm text-muted-foreground">
               <li>
                 <span className="block text-[0.68rem] uppercase tracking-[0.28em] text-muted-foreground/70">General</span>
-                <a href="mailto:hello@netherbowport.co" className="copper-underline mt-1 inline-block hover:text-cream">hello@netherbowport.co</a>
+                <a href="mailto:hello@netherbowport.co" className="copper-underline mt-1 inline-block hover:text-cream">hello@thenetherbowport.com</a>
               </li>
               <li>
                 <span className="block text-[0.68rem] uppercase tracking-[0.28em] text-muted-foreground/70">Press &amp; private hire</span>
-                <a href="mailto:press@netherbowport.co" className="copper-underline mt-1 inline-block hover:text-cream">press@netherbowport.co</a>
+                <a href="mailto:press@netherbowport.co" className="copper-underline mt-1 inline-block hover:text-cream">press@thenetherbowport.com</a>
               </li>
               <li className="flex items-center gap-2 pt-2">
                 <Phone className="h-3.5 w-3.5 text-copper" strokeWidth={1.5} />
