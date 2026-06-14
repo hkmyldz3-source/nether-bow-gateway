@@ -32,11 +32,11 @@ export function Footer() {
               <MapPin className="h-3 w-3" strokeWidth={1.5} /> Find the Port
             </div>
             <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-              43 High Street, on the historic Royal Mile,
+              12 High Street, on the historic Royal Mile,
               <br />
               <span className="text-cream">directly opposite the old high street cross.</span>
               <br />
-              Edinburgh EH1 1SR · Scotland
+              Edinburgh EH1 1TB · Scotland
             </p>
             <div className="mt-6 flex items-center gap-6 text-sm text-muted-foreground">
               <a href="mailto:hello@netherbowport.co" className="copper-underline flex items-center gap-2 hover:text-cream">
