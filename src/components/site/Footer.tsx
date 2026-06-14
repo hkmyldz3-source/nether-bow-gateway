@@ -62,7 +62,7 @@ export function Footer() {
         <div className="hairline mt-16" />
 
         <div className="mt-8 flex flex-wrap items-center justify-between gap-4 text-[0.68rem] uppercase tracking-[0.28em] text-muted-foreground">
-          <span>Copyright © 2026 The Nether Bow Port. Crafted for modern travellers.</span>
+          <span>Copyright © 2026 The Nether Bow Port.</span>
           <span>Royal Mile · Edinburgh</span>
         </div>
       </div>
